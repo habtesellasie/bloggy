@@ -9,20 +9,23 @@ use Illuminate\Database\Eloquent\ModelNotFoundException;
 class Post extends Model
 {
     use HasFactory;
+    protected $guarded = [];
+    protected $with = ['category', 'author'];
 
-    // public static function all()
-    // {
-    // return cache()->rememberForever('posts.all', function() {
-    //     return collect(File::files(resource_path('posts')))
-    //     ->map(fn($file) => Yam)
-    // });
-    // }
-
-    public static function find($id)
+    public function category()
     {
-        $post = static::all()->firstWhere('id', $id);
-        if (!$post) {
-            throw new ModelNotFoundException();
-        }
+        //* elouquent relationships
+        // hasOne, hasMany, belongsTo, belogsToMany
+        return $this->belongsTo(Category::class);
     }
+
+    public function author()
+    {
+        return $this->belongsTo(User::class, 'user_id');
+    }
+
+    // public function getRouteKeyName()
+    // {
+    //     return 'slug';
+    // }
 }
