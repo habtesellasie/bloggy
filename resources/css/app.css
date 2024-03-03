@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 html {
-  color-scheme: dark light;
+  /* color-scheme: dark light; */
 }
 
 @keyframes slideInFromRight {
