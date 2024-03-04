@@ -26,32 +26,4 @@ class PostController extends Controller
             'post' => $post
         ]);
     }
-
-
-    public function create()
-    {
-        return view('posts.create');
-    }
-
-    public function store()
-    {
-        $attributes = request()->validate([
-            'title' => 'required',
-            'excerpt' => 'required',
-            'body' => 'required',
-            'thumbnail' => 'required|image',
-            'slug' => ['required', Rule::unique('posts', 'slug')],
-            'category_id' => ['required', Rule::exists('categories', 'id')],
-        ]);
-
-        $attributes['user_id'] = auth()->id();
-        $attributes['thumbnail'] = request()->file('thumbnail')->store('thumbnails');
-
-        Post::create($attributes);
-
-        return redirect('/');
-    }
-
-    //? 7 resourceful controller actions
-    //? index, show, create, store, edit, update, destroy
 }

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminPostController;
 use App\Http\Controllers\NewsletterController;
 use App\Models\Post;
 use App\Models\User;
@@ -75,6 +76,20 @@ Route::post('login', [SessionsController::class, 'store']);
 
 Route::post('logout', [SessionsController::class, 'destroy'])->middleware('auth');
 
+Route::middleware('can:admin')->group(function () {
+    // Route::resource('admin/posts', AdminPostController::class)->except('show');
+    // ? if I use 👆 I would comment all of the below code. let it sink in
+    Route::post('admin/posts', [AdminPostController::class, 'store']);
+    Route::get('admin/posts/create', [AdminPostController::class, 'create']);
+    Route::get('admin/posts', [AdminPostController::class, 'index']);
+    Route::get('admin/posts/{post}/edit', [AdminPostController::class, 'edit']);
+    Route::patch('admin/posts/{post}', [AdminPostController::class, 'update']);
+    Route::delete('admin/posts/{post}', [AdminPostController::class, 'destroy']);
+});
 
-Route::get('admin/posts/create', [PostController::class, 'create'])->middleware('admin');
-Route::post('admin/posts', [PostController::class, 'store'])->middleware('admin');
+/* Route::post('admin/posts', [AdminPostController::class, 'store'])->middleware('can:admin');
+.
+.
+.
+.
+*/

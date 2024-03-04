@@ -1,5 +1,4 @@
 <x-layout>
-
     <x-setting heading="Publish New Post">
         <form action="/admin/posts" method="POST" enctype="multipart/form-data">
             @csrf
