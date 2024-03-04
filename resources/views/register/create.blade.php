@@ -1,12 +1,12 @@
 <x-layout>
 
     <section class="px-6 py-8">
-        <main class="max-w-lg mx-auto mt-10 bg-gray-900 border border-gray-200 p-8 rounded-xl">
+        <main class="max-w-lg mx-auto mt-10 bg-gray-200 border border-gray-200 p-8 rounded-xl">
             <h1 class="text-center font-bold text-xl">Register</h1>
             <form action="/register" method="post" class="mt-10">
                 @csrf
                 <div class="mb-6">
-                    <label for="name" class="block mb-2 uppercase font-bold text-xs text-gray-300">
+                    <label for="name" class="block mb-2 uppercase font-bold text-xs text-gray-600">
                         Name
                     </label>
                     <input type="text"
@@ -18,7 +18,7 @@
                 </div>
 
                 <div class="mb-6">
-                    <label for="username" class="block mb-2 uppercase font-bold text-xs text-gray-300">
+                    <label for="username" class="block mb-2 uppercase font-bold text-xs text-gray-600">
                         Username
                     </label>
                     <input type="text"
@@ -30,7 +30,7 @@
                 </div>
 
                 <div class="mb-6">
-                    <label for="email" class="block mb-2 uppercase font-bold text-xs text-gray-300">
+                    <label for="email" class="block mb-2 uppercase font-bold text-xs text-gray-600">
                         Email
                     </label>
                     <input type="email"
@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="mb-6">
-                    <label for="password" class="block mb-2 uppercase font-bold text-xs text-gray-300">
+                    <label for="password" class="block mb-2 uppercase font-bold text-xs text-gray-600">
                         Password
                     </label>
                     <input type="password"

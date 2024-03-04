@@ -22,3 +22,5 @@ NOTE: `php artisan migrate:fresh --seed` will do both.
 > {{$posts->links('pagination::tailwind') }} to have the numbered pagination style
 
 > `alias art="php artisan"` => `art migrate, serve . . .`
+
+`php artisan storage:link` to link one folder to another, in this case the public folder to the storage.public folder
