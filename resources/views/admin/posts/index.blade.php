@@ -10,8 +10,9 @@
                                     <tr>
                                         <td class="px-6 py-4 whitespace-nowrap">
                                             <div class="flex items-center">
-                                                <img src="{{ asset('storage/' . $post->thumbnail) }}" width="50"
-                                                    height="50" class="rounded-full h-12 w-12 object-cover">
+                                                <img src="{{ $post->thumbnail ? asset('storage/' . $post->thumbnail) : asset('images/illustration-5.png') }}"
+                                                    width="50" height="50"
+                                                    class="rounded-full h-12 w-12 object-cover">
                                             </div>
                                         </td>
 

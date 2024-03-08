@@ -19,7 +19,8 @@ NOTE: `php artisan migrate:fresh --seed` will do both.
 
 > `php artisan vendor:publish` to make some hidden things on a vendor folder to appear on a codespace
 
-> {{$posts->links('pagination::tailwind') }} to have the numbered pagination style
+> after publishing the paginate folder {{$posts->links('pagination::tailwind') }} to have the numbered pagination style
+> And on the AppServiceProvider.php include Paginator::useTailwind();
 
 > `alias art="php artisan"` => `art migrate, serve . . .`
 

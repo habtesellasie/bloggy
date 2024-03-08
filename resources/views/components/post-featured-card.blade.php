@@ -7,7 +7,8 @@
             {{-- TODO --}}
             {{-- <img src="/images/illustration-1.png" alt="Blog Post illustration" class="rounded-xl"> --}}
 
-            <img src="{{ asset('storage/' . $post->thumbnail) }}" class="rounded-xl max-h-fit">
+            <img src="{{ $post->thumbnail ? asset('storage/' . $post->thumbnail) : asset('images/illustration-5.png') }}"
+                class="rounded-xl max-h-fit">
         </div>
 
         <div class="flex-1 flex flex-col justify-between">
